@@ -1,0 +1,124 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int     @id @default(autoincrement())
+  name     String
+  email    String  @unique
+  password String
+  is_admin Boolean @default(false)
+
+  about    About?
+  social   Social?
+  projects Project[]
+  articles Article[]
+  comments Comment[]
+
+  @@index([id, email])
+}
+
+model Article {
+  id          Int       @id @default(autoincrement())
+  title       String
+  image       String
+  description String    @db.Text
+  user_id     Int
+  is_public   Boolean   @default(false)
+  is_comment  Boolean   @default(false)
+  user        User      @relation(fields: [user_id], references: [id])
+  comments    Comment[]
+  category    Category? @relation(fields: [categoryId], references: [id])
+  categoryId  Int
+  createdAt   DateTime? @default(now())
+  updatedAt   DateTime? @updatedAt
+
+  @@map("articles")
+}
+
+model Comment {
+  id         Int     @id @default(autoincrement())
+  body       String
+  article_id Int
+  user_id    Int
+  is_public  Boolean @default(false)
+  user       User    @relation(fields: [user_id], references: [id])
+  article    Article @relation(fields: [article_id], references: [id])
+
+  @@map("comments")
+}
+
+model About {
+  id          Int     @id @default(autoincrement())
+  name        String
+  title       String
+  image       String? @db.Text
+  description String
+  user_id     Int     @unique
+
+  user User @relation(fields: [user_id], references: [id])
+}
+
+model Social {
+  id        Int    @id @default(autoincrement())
+  facebook  String @default("#")
+  twitter   String @default("#")
+  tiktok    String @default("#")
+  instagram String @default("#")
+  github    String @default("#")
+  linkedin  String @default("#")
+  user_id   Int    @unique
+  User      User   @relation(fields: [user_id], references: [id])
+}
+
+model Category {
+  id       Int       @id @default(autoincrement())
+  name     String
+  slug     String
+  type     Type      @default(Project)
+  projects Project[]
+  articles Article[]
+
+  @@map("categories")
+}
+
+enum Type {
+  Article
+  Project
+}
+
+model Project {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String
+  image       String
+  link        String?
+  github      String?
+  is_public   Boolean   @default(false)
+  User        User?     @relation(fields: [userId], references: [id])
+  userId      Int?
+  category    Category? @relation(fields: [categoryId], references: [id])
+  categoryId  Int?
+
+  @@map("projects")
+}
+
+model Message {
+  id         Int      @id @default(autoincrement())
+  name       String
+  email      String
+  message    String   @db.Text
+  isReply    Boolean  @default(false)
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("messages")
+}

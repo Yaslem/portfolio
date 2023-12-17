@@ -1,0 +1,254 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-background: #000;
+  --secondary-background: #18181B;
+  --header-background: rgb(39, 39, 42);
+  --border: rgba(63, 63, 70, 0.4);
+  --primary-border-header: 1px solid rgba(244, 165, 96, 0.187);
+  --title: rgb(244, 244, 245);
+  --sub-title: rgb(161, 161, 170);
+  --icon-hover: #d4d4d8;
+  --blue: rgb(93, 188, 252);
+  --container-padding: 4.8rem;
+  --border-radius: 12px;
+  --padding: 8px;
+  --primary-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.primary-shadow {
+  box-shadow: var(--primary-shadow);
+}
+.primary-border-header {
+  border: var(--primary-border-header);
+}
+.nav-box-shadow{
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.card-box-shadow{
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.14), 1px 1px 1px rgba(0, 0, 0, 0.16)
+}
+
+
+.contact-border {border: 1px solid rgb(63, 63, 70)}
+.submit-border {border: 1px solid rgb(63, 63, 70);}
+
+
+.menue-model {
+  animation: myMove 0.7s 1;
+}
+
+@keyframes myMove {
+  0% {
+      scale: 0;
+  }
+  60% {
+      scale: 1.2;
+  }
+  100% {
+      scale: 1;
+  }
+}
+
+
+/* #email,
+#message {
+    all: unset;
+} */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  border: 7px solid #27272A;
+  box-shadow: inset 0 0 2.5px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #000, #888);
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* for Firefox */
+html {
+  scrollbar-color: #000 #888;
+  scroll-behavior: smooth;
+}
+
+/* *,
+*:after,
+*:after {
+  box-sizing: inherit;
+} */
+@font-face {
+  font-family: defaultFont;
+  src: url('/fonts/ReadexProMedium.ttf');
+}
+.tox-tinymce {
+  border-width: 1px !important;
+}
+
+.tox-statusbar__branding {
+  display: none !important;
+}
+
+body {
+  /*background-color: var(--primary-background);*/
+  direction: rtl;
+  letter-spacing: 0.2px;
+}
+
+.light {
+  --primary-background: rgb(250, 250, 250);
+  --secondary-background: rgb(255, 255, 255);
+  --header-background: rgb(252, 253, 253);
+  --border: rgba(202, 202, 202, 0.5);
+  --title: rgb(39, 39, 42);
+  --sub-title: rgb(82, 82, 61);
+  --icon-hover: #333;
+  --blue: rgb(0, 149, 246);
+  --container-padding: 4.8rem;
+}
+
+.light #email,
+.light #message {
+    background-color: #ffffff29;
+    border-color: #80808073;
+    box-shadow: 1px 1px 1px rgba(73, 73, 75, 0.105);
+    color: #232324;
+}
+
+/* .container {
+  border: 2px solid var(--border);
+  width: 96%;
+  margin: 0 auto;
+  background-color: var(--secondary-background);
+  padding: 0 var(--container-padding);
+} */
+
+button.active {
+  opacity: 1;
+  border: 2px solid var(--blue);
+  font-weight: bold;
+  padding: .8rem 0;
+}
+
+.icon-sun {
+  color: #ffc336a8;
+}
+.light button.active {
+  border: none;
+}
+
+.divider {
+  border-bottom: 1px solid var(--border);
+  margin: 3rem 0;
+  width: calc(100% + var(--container-padding) + var(--container-padding));
+  margin-right: calc(var(--container-padding) * -1);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.2s;
+}
+
+button {
+  all: unset;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  scale: 0.9;
+}
+
+/* .flex {
+  display: flex;
+  align-items: center;
+}
+
+.border {
+  border: 2px solid red;
+} */
+
+input,
+textarea {
+  font-family: inherit
+}
+
+/* .scrollTop {
+  background-color: #1976d2d9;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 2rem;
+  right: 3%;
+  border: 1px solid #ffffff33
+}
+.scrollTop:hover {
+  background-color: #1976d2;
+} */
+
+@media (max-width: 1000px) {
+  .container {
+    --container-padding: 1.7rem;
+  }
+}
+
+/*
+
+  .divider {
+    width: calc(100% + var(--container-padding) + var(--container-padding));
+    margin-right: calc(var(--container-padding) * -1);
+  }
+} */
+
+/* @media (max-width: 700px) {
+  header nav {
+    display: none;
+  }
+
+  header .menu {
+    display: block;
+  }
+} */
+
+/*
+
+  .scrollTop {
+    opacity: 0.5;
+    width: 2.2rem;
+  height: 2.2rem;
+  }
+} */
+
+/*@media (max-width: 600px) {*/
+/*  .container {*/
+/*    --container-padding: 1rem*/
+/*  }*/
+/*}*/
