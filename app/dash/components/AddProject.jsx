@@ -1,6 +1,6 @@
 "use client"
-import Toaster from "@/app/dash/components/Toaster";
-import {createProject} from "@/app/controllers/Project";
+import Toaster from "./Toaster";
+import {createProject} from "../../controllers/Project";
 import {useRef, useState} from "react";
 import {useRouter} from "next/navigation";
 

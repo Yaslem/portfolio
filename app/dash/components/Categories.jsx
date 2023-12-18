@@ -1,11 +1,8 @@
 "use client"
 
-import Link from "next/link";
-import {usePathname} from "next/navigation";
 import {useRef, useState} from "react";
-import {createCategory, deleteCategory, updateCategory} from "@/app/controllers/Category";
-import {revalidatePath} from "next/cache";
-import Toaster from "@/app/dash/components/Toaster";
+import {createCategory, deleteCategory, updateCategory} from "../../controllers/Category";
+import Toaster from "./Toaster";
 
 export default function Categories({categories, status, messageEmpty}) {
     const [showModal, setShowModal] = useState(false)

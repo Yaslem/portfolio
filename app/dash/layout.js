@@ -1,6 +1,6 @@
 import Sidebar from "./components/Sidebar"
 import Header from "./components/Header"
-import {getAbout} from "@/app/controllers/About";
+import {getAbout} from "../controllers/About";
 
 export const metadata = {
     title: {

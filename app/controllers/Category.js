@@ -4,12 +4,8 @@ import {getServerSession} from "next-auth";
 import {authOptions} from "@/app/api/auth/[...nextauth]/route";
 import SendMessage from "@/helpers/SendMessage";
 import {revalidatePath} from "next/cache";
-let session
-getServerSession(authOptions).then(data => {
-    session = data
-})
-
 export const createCategory = async (FormData) => {
+    const session = await getServerSession(authOptions)
     if(session.user.is_admin) {
         if (FormData.get("name").length === 0) {
             return {
@@ -46,6 +42,7 @@ export const createCategory = async (FormData) => {
 }
 
 export const updateCategory = async (FormData) => {
+    const session = await getServerSession(authOptions)
     if(session.user.is_admin) {
         if (FormData.get("id").length === 0) {
             return {
@@ -84,6 +81,7 @@ export const updateCategory = async (FormData) => {
 }
 
 export const deleteCategory = async (id) => {
+    const session = await getServerSession(authOptions)
     if(session.user.is_admin) {
         if (id === undefined) {
             return {

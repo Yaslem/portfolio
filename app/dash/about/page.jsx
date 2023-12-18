@@ -1,5 +1,5 @@
-import About from "@/app/dash/components/About";
-import {getAbout} from "@/app/controllers/About";
+import About from "../components/About";
+import {getAbout} from "../../controllers/About";
 
 export const metadata = {
     title: 'عني',

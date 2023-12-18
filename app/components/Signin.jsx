@@ -2,7 +2,7 @@
 import {useRef, useState} from "react"
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import Toaster from "@/app/dash/components/Toaster";
+import Toaster from "../dash/components/Toaster";
 const Signin = () => {
     const router = useRouter()
     const emailRef = useRef()

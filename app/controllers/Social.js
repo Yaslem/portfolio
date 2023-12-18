@@ -5,10 +5,6 @@ import {authOptions} from "@/app/api/auth/[...nextauth]/route";
 import {revalidatePath} from "next/cache";
 import SendMessage from "@/helpers/SendMessage";
 
-let session
-getServerSession(authOptions).then(data => {
-    session = data
-})
 
 export const createSocial = async ({
     facebook,
@@ -19,6 +15,7 @@ export const createSocial = async ({
     linkedin,
     id
 }) => {
+    const session = await getServerSession(authOptions)
     if(session.user.is_admin) {
         if(id === null) {
             await prisma.social.create({
@@ -57,7 +54,6 @@ export const createSocial = async ({
 }
 export const getSocial = async () => {
     const social = await prisma.social.findFirst()
-
     if(social){
         return {
             social: social,

@@ -8,8 +8,8 @@ import { TiThMenu } from "react-icons/ti";
 import Link from "next/link"
 import {usePathname} from "next/navigation";
 import {useDispatch, useSelector} from "react-redux";
-import {sideActions} from "@/redux/slices/sideSlice";
-import useDeviceSize from "@/app/dash/components/useDeviceSize";
+import {sideActions} from "../../../redux/slices/sideSlice";
+import useDeviceSize from "../components/useDeviceSize";
 var classNames = require('classnames');
 const Header = () => {
   const pathName = usePathname()

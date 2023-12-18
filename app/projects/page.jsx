@@ -1,5 +1,5 @@
-import Main from "@/app/components/Main";
-import {getCategories, getPublicProjects} from "@/app/controllers/Project";
+import Main from "../components/Main";
+import {getCategories, getPublicProjects} from "../controllers/Project";
 
 export const metadata = {
     title: 'المشاريع',

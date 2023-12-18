@@ -1,5 +1,5 @@
-import {getSocial} from "@/app/controllers/Social";
-import Social from "@/app/dash/components/Social";
+import {getSocial} from "../../controllers/Social";
+import Social from "../components/Social";
 
 export const metadata = {
     title: 'روابط التواصل الاجتماعي',

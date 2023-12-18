@@ -1,15 +1,13 @@
-
-import Articles from "@/app/components/Articles";
-import {getPublicArticles} from "@/app/controllers/Article";
+"use server"
+import Articles from "../components/Articles";
+import {getPublicArticles} from "../controllers/Article";
 
 export const metadata = {
     title: 'المقالات',
 }
-const page = async () => {
+export default async function Page()  {
     const { articles, status, message } = await getPublicArticles()
   return (
     <Articles articles={articles} status={status} />
   )
 }
-
-export default page

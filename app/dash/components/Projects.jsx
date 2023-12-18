@@ -3,9 +3,9 @@
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 import Image from "next/image";
-import {deleteProject, updateProject, updateStatusProject} from "@/app/controllers/Project";
+import {deleteProject, updateProject, updateStatusProject} from "../../controllers/Project";
 import {useRef, useState} from "react";
-import Toaster from "@/app/dash/components/Toaster";
+import Toaster from "./Toaster";
 
 export default function Projects({projects, status, messageEmpty}) {
     const pathname = usePathname()

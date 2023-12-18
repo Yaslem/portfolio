@@ -1,7 +1,7 @@
 import Redux from './Redux'
 import './globals.css'
-import {getAbout} from "@/app/controllers/About";
-import {getSocial} from "@/app/controllers/Social";
+import {getAbout} from "./controllers/About";
+import {getSocial} from "./controllers/Social";
 
 
 export const metadata = {

@@ -1,5 +1,5 @@
-import {getArticleById, getCategories} from "@/app/controllers/Article";
-import AddArticles from "@/app/dash/components/AddArticles";
+import {getArticleById, getCategories} from "../../../../controllers/Article";
+import AddArticles from "../../../components/AddArticles";
 import {redirect} from "next/navigation";
 
 export const metadata = {

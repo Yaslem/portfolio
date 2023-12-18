@@ -1,16 +1,13 @@
 "use server"
 import prisma from "@/prisma/db"
 import {getServerSession} from "next-auth";
-import {authOptions} from "@/app/api/auth/[...nextauth]/route";
+import authOptions from "../../helpers/Auth";
 import upload from "@/helpers/Upload";
 import {revalidatePath} from "next/cache";
 import SendMessage from "@/helpers/SendMessage";
 
-let session
-getServerSession(authOptions).then(data => {
-    session = data
-})
 export const createArticle = async (formData) => {
+    const session = await getServerSession(authOptions)
     if(session.user.is_admin) {
         if (formData.get("title").length === 0) {
             return {
@@ -58,6 +55,7 @@ export const createArticle = async (formData) => {
 }
 
 export const updateArticle = async (formData) => {
+    const session = await getServerSession(authOptions)
     if(session.user.is_admin) {
         if (formData.get("title").length === 0) {
             return {
@@ -122,6 +120,7 @@ export const updateArticle = async (formData) => {
 }
 
 export const updateStatusArticle = async (id, value) => {
+    const session = await getServerSession(authOptions)
     if(session.user.is_admin) {
         await prisma.article.update({
             where: {
@@ -139,6 +138,7 @@ export const updateStatusArticle = async (id, value) => {
 }
 
 export const updateStatusCommentArticle = async (id, value) => {
+    const session = await getServerSession(authOptions)
     if(session.user.is_admin) {
         await prisma.article.update({
             where: {
@@ -155,6 +155,7 @@ export const updateStatusCommentArticle = async (id, value) => {
     }
 }
 export const deleteArticle = async (id) => {
+    const session = await getServerSession(authOptions)
     if(session.user.is_admin) {
         if (id === undefined) {
             return {

@@ -2,7 +2,7 @@
 import {useRef, useState} from "react"
 import { register } from "../controllers/auth"
 import { useRouter } from "next/navigation";
-import Toaster from "@/app/dash/components/Toaster";
+import Toaster from "../dash/components/Toaster";
 
 const Register = () => {
     const router = useRouter()

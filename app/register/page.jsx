@@ -1,4 +1,4 @@
-import Register from "@/app/components/Register";
+import Register from "../components/Register";
 
 export const metadata = {
     title: 'تسجيل حساب جديد',

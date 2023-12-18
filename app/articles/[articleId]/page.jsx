@@ -1,7 +1,6 @@
-import {getPublicArticleById} from "@/app/controllers/Article";
-import AddArticles from "@/app/dash/components/AddArticles";
+import {getPublicArticleById} from "../../controllers/Article";
 import {redirect} from "next/navigation";
-import ShowArticle from "@/app/components/ShowArticle";
+import ShowArticle from "../../components/ShowArticle";
 
 export default async function page({ params }) {
     const { article, status } = await getPublicArticleById([params.articleId])

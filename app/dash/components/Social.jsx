@@ -1,7 +1,7 @@
 "use client"
 import {useState} from "react";
-import Toaster from "@/app/dash/components/Toaster";
-import {createSocial} from "@/app/controllers/Social";
+import Toaster from "./Toaster";
+import {createSocial} from "../../controllers/Social";
 
 export default function Social({social, status}) {
     const [facebook, setFacebook] = useState(status === "success" ? social.facebook : "")

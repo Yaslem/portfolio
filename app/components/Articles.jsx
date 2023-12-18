@@ -2,8 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Message from "@/app/components/Message";
-import Title from "@/app/components/Title";
+import Message from "../components/Message";
+import Title from "../components/Title";
 import parse from 'html-react-parser';
 
 const Articles = ({articles, status}) => {

@@ -3,8 +3,8 @@ import Lottie from "lottie-react";
 import contact from "../animations/contact.json";
 import emailjs from '@emailjs/browser';
 import {useRef, useState} from "react";
-import {createMessage} from "@/app/controllers/Message";
-import Toaster from "@/app/dash/components/Toaster";
+import {createMessage} from "../controllers/Message";
+import Toaster from "../dash/components/Toaster";
 export default function Contact() {
     const form = useRef();
     const nameRef = useRef()

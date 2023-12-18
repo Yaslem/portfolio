@@ -1,3 +1,5 @@
+"use server"
+
 import { join } from "path";
 import { mkdir, stat, writeFile } from "fs/promises";
 const upload = async (image) => {

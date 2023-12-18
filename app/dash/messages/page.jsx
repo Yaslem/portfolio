@@ -1,6 +1,5 @@
-import Articles from "@/app/dash/components/Articles";
-import {getMessages} from "@/app/controllers/Message";
-import Messages from "@/app/dash/components/Messages";
+import {getMessages} from "../../controllers/Message";
+import Messages from "../components/Messages";
 
 export const metadata = {
     title: 'الرسائل',

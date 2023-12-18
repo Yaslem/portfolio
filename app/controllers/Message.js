@@ -38,17 +38,22 @@ export const createMessage = async (name, email, message) => {
 }
 
 export const getMessages = async () => {
-    const messages = await prisma.message.findMany()
+    const session = await getServerSession(authOptions)
+    if(session.user.is_admin) {
+        const messages = await prisma.message.findMany()
 
-    if(messages.length > 0){
-        return {
-            messages: messages,
-            status: "success",
-            code: 404,
-            message: "لا توجد بيانات."
+        if(messages.length > 0){
+            return {
+                messages: messages,
+                status: "success",
+                code: 404,
+                message: "تم جلب البيانات بنجاح"
+            }
+        }else {
+            return SendMessage(false, 404, "لا توجد بيانات.")
         }
     }else {
-        return SendMessage(false, 404, "لا توجد بيانات.")
+        return SendMessage(false, 403, "غير مسموح لك.")
     }
 }
 

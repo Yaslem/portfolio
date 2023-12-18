@@ -1,9 +1,9 @@
 "use client"
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
-import Contact from "@/app/components/Contact";
-import Main from "@/app/components/Main";
-import Articles from "@/app/components/Articles";
+import Contact from "./Contact";
+import Main from "./Main";
+import Articles from "./Articles";
 
 function Index({categories, projects, articles}) {
     const [showButton, setShowButton] = useState(false)

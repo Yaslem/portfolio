@@ -6,12 +6,8 @@ import {revalidatePath} from "next/cache";
 import SendMessage from "@/helpers/SendMessage";
 import prisma from "@/prisma/db"
 
-let session
-getServerSession(authOptions).then(data => {
-    session = data
-})
-
 export const createProject = async (FormData) => {
+    const session = await getServerSession(authOptions)
     if(session.user.is_admin) {
         if (FormData.get("name").length === 0) {
             return {
@@ -61,6 +57,7 @@ export const createProject = async (FormData) => {
 }
 
 export const updateProject = async (FormData) => {
+    const session = await getServerSession(authOptions)
     if(session.user.is_admin) {
         if (FormData.get("id").length === 0) {
             return {
@@ -106,6 +103,7 @@ export const updateProject = async (FormData) => {
 }
 
 export const updateStatusProject = async (id, value) => {
+    const session = await getServerSession(authOptions)
     if(session.user.is_admin) {
         await prisma.project.update({
             where: {
@@ -122,6 +120,7 @@ export const updateStatusProject = async (id, value) => {
     }
 }
 export const deleteProject = async (id) => {
+    const session = await getServerSession(authOptions)
     if(session.user.is_admin){
         if (id === undefined) {
             return {

@@ -1,5 +1,5 @@
-import Projects from "@/app/dash/components/Projects";
-import {getProjects} from "@/app/controllers/Project";
+import Projects from "../components/Projects";
+import {getProjects} from "../../controllers/Project";
 
 export const metadata = {
     title: 'المشاريع',

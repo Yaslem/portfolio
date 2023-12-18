@@ -1,8 +1,7 @@
 "use client"
 import {useRef, useState} from "react";
-import {createAbout} from "@/app/controllers/About";
-import Toaster from "@/app/dash/components/Toaster";
-import {createArticle, updateArticle} from "@/app/controllers/Article";
+import {createAbout} from "../../controllers/About";
+import Toaster from "./Toaster";
 
 export default function About({about, status}) {
     const [name, setName] = useState(status === "success" ? about.name : "")

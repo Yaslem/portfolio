@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 export default function Header() {
   const [showModel, setShowModel] = useState(false);
-  const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "light");
+  const [theme, setTheme] = useState();
 
   useEffect(() => {
+      setTheme(localStorage.getItem("theme") ?? "light")
     if (theme === "light") {
       document.body.classList.remove("dark");
       document.body.classList.add("light")

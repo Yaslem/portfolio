@@ -1,5 +1,5 @@
-import AddProject from "@/app/dash/components/AddProject";
-import {getCategories} from "@/app/controllers/Project";
+import AddProject from "../../components/AddProject";
+import {getCategories} from "../../../controllers/Project";
 
 export const metadata = {
     title: 'إضافة مشروع',

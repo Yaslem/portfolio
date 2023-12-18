@@ -1,11 +1,11 @@
 "use client"
 
 import Link from "next/link";
-import {usePathname, useRouter} from "next/navigation";
+import {usePathname} from "next/navigation";
 import Image from "next/image";
 import {useState} from "react";
-import {deleteArticle, updateStatusArticle, updateStatusCommentArticle} from "@/app/controllers/Article";
-import Toaster from "@/app/dash/components/Toaster";
+import {deleteArticle, updateStatusArticle, updateStatusCommentArticle} from "../../controllers/Article";
+import Toaster from "./Toaster";
 export default function Articles({articles, status, messageEmpty}) {
     const pathname = usePathname()
 

@@ -1,7 +1,8 @@
-"use client"
+import Contact from "../components/Contact";
 
-import Contact from "@/app/components/Contact";
-
+export const metadata = {
+    title: 'تواصل معي',
+}
 const page = () => {
     return (
         <Contact />

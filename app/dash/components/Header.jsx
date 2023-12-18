@@ -2,10 +2,10 @@
 import Image from "next/image"
 import { TbLogout2 } from "react-icons/tb";
 import {signOut} from "next-auth/react";
-import {sideActions} from "@/redux/slices/sideSlice";
+import {sideActions} from "../../../redux/slices/sideSlice";
 import {TiThMenu} from "react-icons/ti";
 import {useDispatch, useSelector} from "react-redux";
-import useDeviceSize from "@/app/dash/components/useDeviceSize";
+import useDeviceSize from "../components/useDeviceSize";
 
 const Header = ({about}) => {
     const dispatch = useDispatch()

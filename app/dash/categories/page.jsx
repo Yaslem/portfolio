@@ -1,5 +1,5 @@
-import Categories from "@/app/dash/components/Categories";
-import {getCategories} from "@/app/controllers/Category";
+import Categories from "../components/Categories";
+import {getCategories} from "../../controllers/Category";
 
 export const metadata = {
     title: 'التصنيفات',

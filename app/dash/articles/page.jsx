@@ -1,5 +1,5 @@
-import Articles from "@/app/dash/components/Articles";
-import {getArticles} from "@/app/controllers/Article";
+import Articles from "../components/Articles";
+import {getArticles} from "../../controllers/Article";
 
 export const metadata = {
     title: 'المقالات',

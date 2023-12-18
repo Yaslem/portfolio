@@ -1,10 +1,10 @@
 "use server"
 import {getServerSession} from "next-auth";
-import {authOptions} from "@/app/api/auth/[...nextauth]/route";
-import SendMessage from "@/helpers/SendMessage";
+import SendMessage from "../../helpers/SendMessage";
 import {revalidatePath} from "next/cache";
-import prisma from "@/prisma/db"
-import upload from "@/helpers/Upload";
+import prisma from "../../prisma/db"
+import upload from "../../helpers/Upload";
+import authOptions from "../../helpers/Auth";
 
 export const createAbout = async (formData) => {
     const session = await getServerSession(authOptions)

@@ -1,6 +1,6 @@
-import Index from "@/app/components";
-import {getCategories, getPublicProjects} from "@/app/controllers/Project";
-import {getPublicArticles} from "@/app/controllers/Article";
+import Index from "./components/Index";
+import {getCategories, getPublicProjects} from "./controllers/Project";
+import {getPublicArticles} from "./controllers/Article";
 
 const page = async () => {
   const { categories, status: statusCategories, message: messageCategories } = await getCategories()

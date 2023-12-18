@@ -1,9 +1,8 @@
 "use client"
 
-import Link from "next/link";
 import React, {useState} from "react";
-import {deleteMessage, updateStatusMessage} from "@/app/controllers/Message";
-import Toaster from "@/app/dash/components/Toaster";
+import {deleteMessage, updateStatusMessage} from "../../controllers/Message";
+import Toaster from "./Toaster";
 export default function Messages({messages, status, messageEmpty}) {
 
     const [isShow, setShow] = useState(false)

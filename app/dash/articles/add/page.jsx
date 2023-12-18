@@ -1,5 +1,5 @@
-import {getCategories} from "@/app/controllers/Article";
-import AddArticles from "@/app/dash/components/AddArticles";
+import {getCategories} from "../../../controllers/Article";
+import AddArticles from "../../components/AddArticles";
 
 export const metadata = {
     title: 'إضافة مقال',

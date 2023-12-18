@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 import Image from "next/image";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
-import Message from "@/app/components/Message";
-import Title from "@/app/components/Title";
+import Message from "./Message";
+import Title from "./Title";
 var classNames = require('classnames');
 export default function Main({categories, projects}) {
     const pathname = usePathname()
