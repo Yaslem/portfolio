@@ -1,9 +1,10 @@
 "use server"
-import prisma from "@/prisma/db"
 import {getServerSession} from "next-auth";
-import {authOptions} from "@/app/api/auth/[...nextauth]/route";
-import SendMessage from "@/helpers/SendMessage";
+import authOptions from "../../helpers/Auth";
+import SendMessage from "../../helpers/SendMessage";
 import {revalidatePath} from "next/cache";
+import prisma from "../../prisma/db"
+
 export const createCategory = async (FormData) => {
     const session = await getServerSession(authOptions)
     if(session.user.is_admin) {

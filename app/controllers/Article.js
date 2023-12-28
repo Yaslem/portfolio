@@ -1,10 +1,11 @@
 "use server"
-import prisma from "@/prisma/db"
 import {getServerSession} from "next-auth";
 import authOptions from "../../helpers/Auth";
-import upload from "@/helpers/Upload";
+import SendMessage from "../../helpers/SendMessage";
 import {revalidatePath} from "next/cache";
-import SendMessage from "@/helpers/SendMessage";
+import prisma from "../../prisma/db"
+import upload from "../../helpers/Upload";
+
 
 export const createArticle = async (formData) => {
     const session = await getServerSession(authOptions)
@@ -282,7 +283,7 @@ export const getPublicArticleById = async (id) => {
 export const getCategories = async () => {
     const categories = await prisma.category.findMany({
         where: {
-          type: "Article"
+            type: "Article"
         },
         select: {
             id: true,

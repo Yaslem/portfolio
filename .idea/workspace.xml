@@ -5,88 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bc355b1-d5ba-49a2-9fc3-6349ce121f1f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/Message.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/ShowArticle.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/Title.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/dash/components/Toaster.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/dash/components/useDeviceSize.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/sitemap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/Auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/icomoon.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/icomoon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/icomoon.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/icomoon.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/articles/[articleId]/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/articles/[articleId]/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/articles/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/articles/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Articles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Articles.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Contact.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Signin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Signin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/contact/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/contact/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/About.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Article.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Category.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Category.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Message.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Message.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Project.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Project.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/Social.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Social.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dash/about/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dash/about/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dash/articles/[articleId]/edit/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dash/articles/[articleId]/edit/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dash/articles/add/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dash/articles/add/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dash/articles/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dash/articles/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dash/categories/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dash/categories/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dash/components/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dash/components/About.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dash/components/AddArticles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dash/components/AddArticles.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dash/components/AddProject.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dash/components/AddProject.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dash/components/Articles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dash/components/Articles.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dash/components/Categories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dash/components/Categories.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dash/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dash/components/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dash/components/Messages.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dash/components/Messages.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dash/components/Projects.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dash/components/Projects.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dash/components/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dash/components/Sidebar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dash/components/Social.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dash/components/Social.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dash/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/dash/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dash/messages/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dash/messages/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dash/projects/add/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dash/projects/add/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dash/projects/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dash/projects/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dash/social/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dash/social/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/app/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/projects/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/projects/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/register/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/register/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/signin/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/signin/page.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helpers/Upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/Upload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20231205214906_create_tables/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20231206093028_/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20231206093348_update/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20231213090225_tabel_update/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20231214133030_update_tables/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20231214133214_upate_table/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20231216063634_update_tables/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20231216094236_upate_table/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20231216170946_update_tables/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20231216183500_update_tables/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20231216183734_y/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20231216185813_update_tables/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20231216193659_update_tables/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20231217062326_update/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20231217073257_update/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20231217175909_updates/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20231217184413_update/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/migration_lock.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/next.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vercel.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,21 +44,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Yeslem/Projects/multi-vendor/.env",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PhpStorm 2023.1.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/apiImagesPortfolio&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PhpStorm 2023.1.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Yeslem\Projects\Js\portfolio1\app\dash\components" />
@@ -165,7 +91,10 @@
       <workItem from="1702456227605" duration="22775000" />
       <workItem from="1702622595742" duration="11030000" />
       <workItem from="1702708238732" duration="7002000" />
-      <workItem from="1702718513537" duration="70695000" />
+      <workItem from="1702718513537" duration="72168000" />
+      <workItem from="1702985858905" duration="1203000" />
+      <workItem from="1703348674930" duration="11345000" />
+      <workItem from="1703488862125" duration="4677000" />
     </task>
     <servers />
   </component>
@@ -178,19 +107,16 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app/signin/page.jsx</url>
           <line>7</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app/controllers/Project.js</url>
           <line>58</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app/controllers/Project.js</url>
           <line>144</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

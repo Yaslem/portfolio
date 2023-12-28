@@ -2,10 +2,16 @@ import Lottie from "lottie-react";
 import dev from "../animations/dev.json";
 import Image from "next/image";
 import Link from "next/link";
-
-export default function Hero(data) {
-    const about = data.data.about
-    const social = data.data.social
+import useSWR from "swr";
+import axios from "axios";
+const fetcher = url => axios.get(url).then(res => res.data)
+export default function Hero() {
+    const { data, error, isLoading } = useSWR('/api/global', fetcher)
+    if(isLoading){
+        return;
+    }
+    const about = data.about
+    const social = data.social
   return (
     <section className='mt-12 flex'>
       <div className='flex-grow'>

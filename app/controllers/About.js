@@ -6,6 +6,7 @@ import prisma from "../../prisma/db"
 import upload from "../../helpers/Upload";
 import authOptions from "../../helpers/Auth";
 
+
 export const createAbout = async (formData) => {
     const session = await getServerSession(authOptions)
 

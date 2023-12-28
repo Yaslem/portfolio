@@ -1,27 +1,24 @@
 "use client"
 import { motion } from "framer-motion"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Contact from "./Contact";
 import Main from "./Main";
 import Articles from "./Articles";
-
-function Index({categories, projects, articles}) {
+function Index() {
     const [showButton, setShowButton] = useState(false)
-    useEffect(() => {
-        document.addEventListener("scroll", () => {
-            if (window.scrollY > 250) {
-                setShowButton(true)
-            } else {
-                setShowButton(false)
-            }
-        })
-    }, [showButton])
+    document.addEventListener("scroll", () => {
+                if (window.scrollY > 250) {
+                    setShowButton(true)
+                } else {
+                    setShowButton(false)
+                }
+            })
 
     return (
         <>
-            <Main categories={categories} projects={projects} />
+            <Main />
             <div className="divider" />
-            <Articles articles={articles} />
+            <Articles />
             <div className="divider" />
             <Contact />
             {

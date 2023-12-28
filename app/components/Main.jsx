@@ -1,21 +1,33 @@
 "use client"
-import React, { useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import Image from "next/image";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 import Message from "./Message";
 import Title from "./Title";
 var classNames = require('classnames');
-export default function Main({categories, projects}) {
-    const pathname = usePathname()
-    const [projectsList, setProjectsList] = useState(projects)
-  const [active, setActive] = useState("all")
+import useSWR from "swr";
+import axios from "axios";
+const fetcher = url => axios.get(url).then(res => res.data)
+export default function Main() {
+    const [projectsList, setProjectsList] = useState()
+    const [active, setActive] = useState("all")
+
+    const { data, error, isLoading } = useSWR('/api/projects', fetcher)
+
+    useEffect(() => {
+        setProjectsList(data?.projects)
+    }, [data]);
+
+    if(isLoading){
+        return;
+    }
   return (
       <>
           <Title title={"المشاريع"} />
           <main className={classNames({
               'flex items-start gap-4 max-[600px]:flex-col max-[600px]:items-center': true,
-              'mt-10': projects !== undefined
+              'mt-10': projectsList !== undefined
           })}>
               {
                   projectsList === undefined
@@ -27,18 +39,19 @@ export default function Main({categories, projects}) {
                                   "active": active === "all"
                               })} onClick={() => {
                                   setActive("all")
-                                  setProjectsList(projects)
+                                  setProjectsList(data.projects)
                               }}>جميع المشاريع</button>
                               {
-                                  categories.map(category =>
+                                  data.categories.map(category =>
                                       <button
+                                          key={category.id}
                                           className={classNames({
                                           "bg-main-buttons-backgraound-color text-white w-40 py-2 text-center text-base transition hover:opacity-100 rounded-md opacity-50 capitalize max-[600px]:w-28 max-[600px]:px-0 max-[600px]:py-3 max-[600px]:text-sm max-[600px]:rounded-xl px-0": true,
                                           "active": active === category.id
                                       })}
                                           onClick={() => {
                                               setActive(category.id)
-                                              setProjectsList(projects.filter((project) => project.categoryId === category.id))
+                                              setProjectsList(data.projects.filter((project) => project.categoryId === category.id))
                                           }}>
                                           {category.name}
                                       </button>
@@ -51,8 +64,10 @@ export default function Main({categories, projects}) {
                                   projectsList.length === 0
                                       ? <Message message={"لا توجد مشاريع حاليا لدى هذا التصنيف"} />
                                       : projectsList.map(project =>
-                                          <article className='card-box-shadow dark:border overflow-hidden dark:border-[#5dbcfc4d] rounded-xl transition dark:bg-gradient-to-b dark:from-[#ffffff0d] dark:to-[#ffffff0d] hover:border-blue hover:rotate-1 hover:scale-100 hover:cursor-pointer'>
-                                              <Image width={266} height={147} className='rounded-xl h-[147px] object-cover w-[266px]' src={"/uploads/" + project.image} />
+                                          <article
+                                              key={project.id}
+                                              className='card-box-shadow dark:border overflow-hidden dark:border-[#5dbcfc4d] rounded-xl transition dark:bg-gradient-to-b dark:from-[#ffffff0d] dark:to-[#ffffff0d] hover:border-blue hover:rotate-1 hover:scale-100 hover:cursor-pointer'>
+                                              <Image alt={"صورة المشروع"} width={266} height={147} className='rounded-xl h-[147px] object-cover w-[266px]' src={"/uploads/" + project.image} />
                                               <div className='w-[266px] py-4 px-2'>
                                                   <h1 className='text-title'>{project.name}</h1>
                                                   <p className='text-sub-title text-sm mt-3 mb-4'>{project.description}</p>

@@ -1,9 +1,9 @@
 "use server"
-import SendMessage from "@/helpers/SendMessage";
-import prisma from "@/prisma/db"
-import {revalidatePath} from "next/cache";
 import {getServerSession} from "next-auth";
-import {authOptions} from "@/app/api/auth/[...nextauth]/route";
+import authOptions from "../../helpers/Auth";
+import SendMessage from "../../helpers/SendMessage";
+import {revalidatePath} from "next/cache";
+import prisma from "../../prisma/db"
 
 export const createMessage = async (name, email, message) => {
     if(name.length === 0){

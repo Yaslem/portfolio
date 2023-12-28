@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 import store from '../redux/store'
 import { SessionProvider } from "next-auth/react";
 import {usePathname} from "next/navigation";
-export default function Redux({ children, session, about, social }) {
+export default function Redux({ children, session }) {
     const pathname = usePathname()
     if(pathname.startsWith("/dash") || pathname === "/register" || pathname === "/signin"){
         return (
@@ -41,7 +41,7 @@ export default function Redux({ children, session, about, social }) {
                         <NextNProgress options={{ showSpinner: false }} stopDelayMs={10} color="#2d5e99" />
                         <div id="up" className="w-[90%] overflow-hidden max-[640px]:w-[100%] my-0 mx-auto bg-secondary-background py-0 px-4 border-2 border-primary-border">
                             <Header />
-                            <Hero data={{social, about}} />
+                            <Hero />
                             <div className="divider" />
                             {children}
                             <div className="divider" />

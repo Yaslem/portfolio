@@ -1,10 +1,10 @@
 "use server"
 import {getServerSession} from "next-auth";
-import {authOptions} from "@/app/api/auth/[...nextauth]/route";
-import upload from "@/helpers/Upload";
+import authOptions from "../../helpers/Auth";
+import SendMessage from "../../helpers/SendMessage";
 import {revalidatePath} from "next/cache";
-import SendMessage from "@/helpers/SendMessage";
-import prisma from "@/prisma/db"
+import prisma from "../../prisma/db"
+import upload from "../../helpers/Upload";
 
 export const createProject = async (FormData) => {
     const session = await getServerSession(authOptions)

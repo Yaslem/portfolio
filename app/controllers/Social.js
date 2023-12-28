@@ -1,20 +1,20 @@
 "use server"
-import prisma from "@/prisma/db"
 import {getServerSession} from "next-auth";
-import {authOptions} from "@/app/api/auth/[...nextauth]/route";
+import authOptions from "../../helpers/Auth";
+import SendMessage from "../../helpers/SendMessage";
 import {revalidatePath} from "next/cache";
-import SendMessage from "@/helpers/SendMessage";
+import prisma from "../../prisma/db"
 
 
 export const createSocial = async ({
-    facebook,
-    twitter,
-    instagram,
-    tiktok,
-    github,
-    linkedin,
-    id
-}) => {
+                                       facebook,
+                                       twitter,
+                                       instagram,
+                                       tiktok,
+                                       github,
+                                       linkedin,
+                                       id
+                                   }) => {
     const session = await getServerSession(authOptions)
     if(session.user.is_admin) {
         if(id === null) {

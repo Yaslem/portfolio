@@ -1,8 +1,8 @@
 import Redux from './Redux'
 import './globals.css'
-import {getAbout} from "./controllers/About";
-import {getSocial} from "./controllers/Social";
+import axios from "axios";
 
+axios.defaults.baseURL = process.env.BASE_URL_API;
 
 export const metadata = {
   title: {
@@ -53,11 +53,8 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
 
-  const { about } = await getAbout()
-  const { social } = await getSocial()
-
   return (
-    <Redux social={social} about={about}>
+    <Redux>
         {children}
     </Redux>
   )

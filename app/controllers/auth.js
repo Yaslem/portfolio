@@ -1,9 +1,9 @@
 "use server"
 import { getServerSession } from "next-auth";
-import prisma from "@/prisma/db"
 import { hash } from 'bcrypt'
-import { authOptions } from "../api/auth/[...nextauth]/route";
-import SendMessage from "@/helpers/SendMessage";
+import authOptions from "../../helpers/Auth";
+import SendMessage from "../../helpers/SendMessage";
+import prisma from "../../prisma/db"
 
 export const register = async (inputs) => {
     const session = await getServerSession(authOptions);
@@ -19,11 +19,11 @@ export const register = async (inputs) => {
                 email: inputs.email,
             },
         })
-    
+
         if (checkUser) {
             return SendMessage(false, 404, "المستخدم موجود بالفعل")
         }
-    
+
         const hashPassword = await hash(inputs.password, 12)
         await prisma.user.create({
             data: {
