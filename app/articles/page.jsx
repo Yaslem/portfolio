@@ -1,9 +1,14 @@
+export const dynamic = 'force-dynamic';
 import Articles from "../components/Articles";
+import {getPublicArticles} from "../controllers/Article";
+
 export const metadata = {
     title: 'المقالات',
 }
-export default function Page()  {
+
+export default async function Page() {
+    const { articles, status, message } = await getPublicArticles()
   return (
-    <Articles />
+    <Articles articles={articles} status={status} />
   )
 }

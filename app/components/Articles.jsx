@@ -1,22 +1,15 @@
-"use client"
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Message from "../components/Message";
 import Title from "../components/Title";
 import parse from 'html-react-parser';
-import useSWR from "swr";
-import axios from "axios";
-const fetcher = url => axios.get(url).then(res => res.data)
 
-const Articles = () => {
-    const { data, error, isLoading } = useSWR('/api/articles', fetcher)
-    if(isLoading){
-        return;
-    }
-    const getDate = (dateP) => {
+const Articles = ({articles, status}) => {
+    const getDate = (date) => {
         let days = ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
-        const date = new Date(dateP)
+
         return  <section>
             <strong>{days[date.getDay()]}، </strong>
             <span dir={"ltr"}>{`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`}</span>
@@ -27,13 +20,13 @@ const Articles = () => {
         <section>
             <Title title={"المقالات"} />
             {
-                data.articles === undefined
+                articles === undefined
                     ? <Message message={"لا توجد مقالات حتى الآن"} />
                     : <article className={"grid mt-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"}>
                         {
-                            data.articles.map(article =>
+                            articles.map(article =>
                                 <Link href={"/articles/" + article.id}>
-                                    <div className={'card-box-shadow dark:border overflow-hidden dark:border-[#5dbcfc4d] rounded-xl transition dark:bg-gradient-to-b dark:from-[#ffffff0d] dark:to-[#ffffff0d] hover:border-blue hover:rotate-1 hover:scale-100 hover:cursor-pointer'}>
+                                    <div className={"flex gap-4 overflow-hidden flex-col bg-white dark:bg-gray-50 border-2 hover:border-blue-600 rounded-xl"}>
                                         <Image className={"w-full object-cover border-b-2 h-[200px]"} width={100} height={100} src={"/uploads/" + article.image} alt={"صورة المقال"} />
                                         <div className={"flex flex-col p-2 gap-2"}>
                                             <h2 className={"text-lg font-bold text-blue-600"}>{article.title}</h2>
@@ -45,7 +38,7 @@ const Articles = () => {
                                                 }
                                             </p>
                                         </div>
-                                        <hr className={"border h-0 dark:border-[#5dbcfc4d]"} />
+                                        <hr className={"border"} />
                                         <div className={"flex p-2 items-center gap-2"}>
                                             <Image className={"rounded-full object-cover w-[40px] h-[40px] border-2"} width={30} height={30} src={"/uploads/" + article.user.about.image} alt={"صورة الكاتب"} />
                                             <div className={"flex flex-col gap-2"}>

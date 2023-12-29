@@ -1,23 +1,24 @@
+export const dynamic = 'force-dynamic';
 import Redux from './Redux'
 import './globals.css'
-import axios from "axios";
+import {getAbout} from "./controllers/About";
+import {getSocial} from "./controllers/Social";
 
-axios.defaults.baseURL = process.env.BASE_URL_API;
 
 export const metadata = {
   title: {
-    template: `%s | ${process.env.SITE_TITLE}`,
-    default: process.env.SITE_TITLE
+    template: "%s | يسلم أحمد ناجم",
+    default: "يسلم أحمد ناجم"
   },
   description: 'يسلم أحمد ناجم، مطور مواقع الويب، وطالب شرعي. قمت ببرمجة العديد من المواقع، أسعى لبرمجة وابتكار حلول تقنية تساعد في إثراء المجتمع التقني.',
   category: 'programming',
-  generator: process.env.SITE_TITLE,
-  applicationName: process.env.SITE_TITLE,
+  generator: 'Nextjs',
+  applicationName: 'يسلم أحمد ناجم',
   referrer: 'origin-when-cross-origin',
-  keywords: [process.env.SITE_TITLE, 'يسلم الشنقيطي', 'البرمجة يسلم', 'Yeslem Ahmed Najem'],
-  authors: [{ name: process.env.SITE_TITLE }, { name: 'Yeslem Ahmed Najem', url: 'https://yeslem.dev' }],
-  creator: process.env.SITE_TITLE,
-  publisher: process.env.SITE_TITLE,
+  keywords: ['يسلم أحمد ناجم', 'يسلم الشنقيطي', 'البرمجة يسلم', 'Yeslem Ahmed Najem'],
+  authors: [{ name: 'يسلم أحمد ناجم' }, { name: 'Yeslem Ahmed Najem', url: 'https://yeslem.dev' }],
+  creator: 'يسلم أحمد ناجم',
+  publisher: 'يسلم أحمد ناجم',
   formatDetection: {
     email: true,
     address: true,
@@ -29,10 +30,10 @@ export const metadata = {
   },
   openGraph: {
     images: '/favicon.png',
-    title: process.env.SITE_TITLE,
-    description: `${process.env.SITE_TITLE}، مطور مواقع الويب، وطالب علم شرعي. قمت ببرمجة العديد من المواقع، أسعى لبرمجة وابتكار حلول تقنية تساعد في إثراء المجتمع التقني.`,
-    url: 'https://yeslem.dev',
-    siteName: process.env.SITE_TITLE,
+    title: 'يسلم أحمد ناجم',
+    description: 'يسلم أحمد ناجم، مطور مواقع الويب، وطالب شرعي. قمت ببرمجة العديد من المواقع، أسعى لبرمجة وابتكار حلول تقنية تساعد في إثراء المجتمع التقني.',
+    url: 'https://nextjs.org',
+    siteName: 'يسلم أحمد ناجم',
     locale: 'ar_MR',
     type: 'website',
   },
@@ -53,8 +54,11 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
 
+  const { about } = await getAbout()
+  const { social } = await getSocial()
+
   return (
-    <Redux>
+    <Redux social={social} about={about}>
         {children}
     </Redux>
   )

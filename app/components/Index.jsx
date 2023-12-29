@@ -1,10 +1,11 @@
 "use client"
 import { motion } from "framer-motion"
-import {useEffect, useState} from "react"
+import { useEffect, useState } from "react"
 import Contact from "./Contact";
 import Main from "./Main";
 import Articles from "./Articles";
-function Index() {
+
+function Index({categories, projects, articles}) {
     const [showButton, setShowButton] = useState(false)
     useEffect(() => {
         document.addEventListener("scroll", () => {
@@ -18,9 +19,9 @@ function Index() {
 
     return (
         <>
-            <Main />
+            <Main categories={categories} projects={projects} />
             <div className="divider" />
-            <Articles />
+            <Articles articles={articles} />
             <div className="divider" />
             <Contact />
             {

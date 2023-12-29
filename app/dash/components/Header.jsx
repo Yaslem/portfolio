@@ -22,10 +22,10 @@ const Header = ({about}) => {
         }
         {
             width > 400 &&
-            <p className={"font-medium text-sm text-blue-500"}>مرحبا بالمبرمج {about?.name}!</p>
+            <p className={"font-medium text-sm text-blue-500"}>مرحبا بالمبرمج {about.name}!</p>
         }
         <div className={"flex items-center gap-4"}>
-            <Image className={"rounded-full object-cover w-[40px] h-[40px] border-2"} alt={"صورة يسلم أحمد ناجم"} width={40} height={40} src={"/api/uploads/" + about?.image} />
+            <Image className={"rounded-full object-cover w-[40px] h-[40px] border-2"} alt={"صورة يسلم أحمد ناجم"} width={40} height={40} src={"/uploads/" + about.image} />
             <TbLogout2 onClick={() => signOut()} className={"text-2xl text-red-500"} />
         </div>
     </header>

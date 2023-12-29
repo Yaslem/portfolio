@@ -1,7 +1,7 @@
 import parse from 'html-react-parser';
 const ShowArticle = ({article}) => {
     return (
-        <section className={"dark:text-white"}>
+        <section>
             {article.title}
             <br/>
             {parse(article.description)}

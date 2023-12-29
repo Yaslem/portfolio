@@ -7,14 +7,14 @@ import prisma from "../../prisma/db"
 
 
 export const createSocial = async ({
-                                       facebook,
-                                       twitter,
-                                       instagram,
-                                       tiktok,
-                                       github,
-                                       linkedin,
-                                       id
-                                   }) => {
+    facebook,
+    twitter,
+    instagram,
+    tiktok,
+    github,
+    linkedin,
+    id
+}) => {
     const session = await getServerSession(authOptions)
     if(session.user.is_admin) {
         if(id === null) {

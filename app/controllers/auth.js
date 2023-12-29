@@ -19,11 +19,11 @@ export const register = async (inputs) => {
                 email: inputs.email,
             },
         })
-
+    
         if (checkUser) {
             return SendMessage(false, 404, "المستخدم موجود بالفعل")
         }
-
+    
         const hashPassword = await hash(inputs.password, 12)
         await prisma.user.create({
             data: {

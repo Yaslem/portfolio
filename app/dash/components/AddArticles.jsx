@@ -1,8 +1,8 @@
 "use client"
-import Toaster from "./Toaster";
 import {useRouter} from "next/navigation";
 import { Editor } from '@tinymce/tinymce-react';
 import {useRef, useState} from "react";
+import Toaster from "./Toaster";
 import {createArticle, updateArticle} from "../../controllers/Article";
 const addArticle = ({categories, isEdit = false, article}) => {
     const articleId = isEdit ? article.id : ""

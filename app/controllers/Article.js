@@ -283,7 +283,7 @@ export const getPublicArticleById = async (id) => {
 export const getCategories = async () => {
     const categories = await prisma.category.findMany({
         where: {
-            type: "Article"
+          type: "Article"
         },
         select: {
             id: true,
