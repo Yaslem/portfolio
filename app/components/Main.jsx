@@ -1,6 +1,5 @@
 "use client"
 import React, { useState } from 'react'
-import Image from "next/image";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 import Message from "./Message";
@@ -52,7 +51,7 @@ export default function Main({categories, projects}) {
                                       ? <Message message={"لا توجد مشاريع حاليا لدى هذا التصنيف"} />
                                       : projectsList.map(project =>
                                           <article className='card-box-shadow dark:border overflow-hidden dark:border-[#5dbcfc4d] rounded-xl transition dark:bg-gradient-to-b dark:from-[#ffffff0d] dark:to-[#ffffff0d] hover:border-blue hover:rotate-1 hover:scale-100 hover:cursor-pointer'>
-                                              <Image width={266} height={147} className='rounded-xl h-[147px] object-cover w-[266px]' src={"/uploads/" + project.image} />
+                                              <img className='rounded-xl h-[147px] object-cover w-[266px]' src={"/uploads/" + project.image} />
                                               <div className='w-[266px] py-4 px-2'>
                                                   <h1 className='text-title'>{project.name}</h1>
                                                   <p className='text-sub-title text-sm mt-3 mb-4'>{project.description}</p>

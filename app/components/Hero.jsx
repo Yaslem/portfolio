@@ -1,6 +1,5 @@
 import Lottie from "lottie-react";
 import dev from "../animations/dev.json";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Hero(data) {
@@ -10,7 +9,7 @@ export default function Hero(data) {
     <section className='mt-12 flex'>
       <div className='flex-grow'>
         <div className='flex items-end gap-6'>
-          <Image alt={"صورة يسلم أحمد ناجم"} width={60} height={60} src={"/uploads/" + about.image} className='w-[88px] h-[88px] object-cover border border-[darkorange] rounded-full p-[1px] shadow-[2px 2px 40px rgba(255, 255, 255, 0.521) inset]' />
+          <img alt={"صورة يسلم أحمد ناجم"} src={"/uploads/" + about.image} className='w-[88px] h-[88px] object-cover border border-[darkorange] rounded-full p-[1px] shadow-[2px 2px 40px rgba(255, 255, 255, 0.521) inset]' />
           <div className='icon-verified text-blue-color text-base mb-1' />
         </div>
         <h1 className='text-title leading-[48px] text-3xl font-bold my-6 mx-0'>{about.title}</h1>
