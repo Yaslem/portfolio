@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import {usePathname} from "next/navigation";
-import Image from "next/image";
 import {deleteProject, updateProject, updateStatusProject} from "../../controllers/Project";
 import {useRef, useState} from "react";
 import Toaster from "./Toaster";
@@ -202,7 +201,7 @@ export default function Projects({projects, status, messageEmpty}) {
                                             {project.description}
                                         </td>
                                         <td className="px-6 py-4">
-                                            <Image width={40} height={40} src={"/uploads/" + project.image} alt={"صورة المشروع"} />
+                                            <img src={"/uploads/" + project.image} alt={"صورة المشروع"} />
                                         </td>
                                         <td className="px-6 py-4">
                                             {project.category.name}

@@ -1,5 +1,4 @@
 
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Message from "../components/Message";
@@ -27,7 +26,7 @@ const Articles = ({articles, status}) => {
                             articles.map(article =>
                                 <Link href={"/articles/" + article.id}>
                                     <div className={"flex gap-4 overflow-hidden flex-col bg-white dark:bg-gray-50 border-2 hover:border-blue-600 rounded-xl"}>
-                                        <Image className={"w-full object-cover border-b-2 h-[200px]"} width={100} height={100} src={"/uploads/" + article.image} alt={"صورة المقال"} />
+                                        <img className={"w-full object-cover border-b-2 h-[200px]"} src={"/uploads/" + article.image} alt={"صورة المقال"} />
                                         <div className={"flex flex-col p-2 gap-2"}>
                                             <h2 className={"text-lg font-bold text-blue-600"}>{article.title}</h2>
                                             <p className={"text-sm text-gray-500"}>

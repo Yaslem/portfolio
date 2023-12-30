@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import {usePathname} from "next/navigation";
-import Image from "next/image";
 import {useState} from "react";
 import {deleteArticle, updateStatusArticle, updateStatusCommentArticle} from "../../controllers/Article";
 import Toaster from "./Toaster";
@@ -62,7 +61,7 @@ export default function Articles({articles, status, messageEmpty}) {
                                             {article.title}
                                         </th>
                                         <td className="px-6 py-4">
-                                            <Image width={40} height={40} src={"/uploads/" + article.image} alt={"صورة المقالة"} />
+                                            <img src={"/uploads/" + article.image} alt={"صورة المقالة"} />
                                         </td>
                                         <td className="px-6 py-4">
                                             {article.category.name}
